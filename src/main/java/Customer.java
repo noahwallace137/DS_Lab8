@@ -29,8 +29,17 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
-            return 0;
-      }
+    	  if (c1.netWorth > c2.netWorth) {
+    		  return 1;
+    		  
+    	  }
+    	  else if(c1.netWorth < c2.netWorth) {
+    		  return -1;
+    	  }
+    	  else {
+    		  return 0;
+    		  }
+    	  }
    
    }
 
@@ -48,7 +57,15 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
+    	  if (c1.yearsWithCompany > c2.yearsWithCompany) {
+    		  return 1;
+    	  }
+    	  else if(c1.yearsWithCompany < c2.yearsWithCompany) {
+    		  return -1;
+    	  }
+    	  else {
 	  return 0;
+    	  }
       }
    
    }
@@ -69,9 +86,25 @@ public class Customer
    */
       public int compare(Customer c1, Customer c2)
       {
-	  return 0;
-      }
-   
+    	  if (c1.netWorth > c2.netWorth) {
+    		  return 1;
+    		  
+    	  }
+    	  else if(c1.netWorth < c2.netWorth) {
+    		  return -1;
+    	  }
+    	  else if (c1.politeness < c2.politeness) {
+    		  return -1;
+    		  
+    	  }
+    	  else if (c1.politeness > c2.politeness) {
+    		  return 1;
+    	  }
+    	  else {
+    		  return 0;
+    	  }
+
+   }
    }
 	
 

@@ -14,8 +14,38 @@ public class PriorityQueue<T> extends Queue<T>
     //@Override
    public void push(T val)
    {
-       super.push(val); //right now this is just a normal Queue as it will do what its parent did.
+	   Node newNode = new Node(val, null);
+	   
+	   if (head == null) {
+		   head = newNode;
+		   tail = head;
+	   }
+	   else if(compare.compare(newNode.val, head.val) > 0) {
+		   newNode.next = head;
+		   head = newNode;
+		   
+	   }
+	   else if(compare.compare(newNode.val, tail.val) <= 0) {
+		   tail.next = newNode;
+		   tail = newNode;
+	   }
+	   else {
+		   Node curr = head;
+		   while (curr.next != null && compare.compare(curr.next.val, newNode.val) >= 0) {
+			   curr = curr.next;
+			   
+		   }
+		   newNode.next = curr.next;
+		   curr.next = newNode;
+	   }
+		   
+	   
+	   
+   
    }
+
+   
+   
 
 
 }
